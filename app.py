@@ -6,7 +6,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'downloads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-SHEETDB_API_URL = "https://sheetdb.io/api/v1/xbi3y5ijz09uu"  # ← ONLY CHANGE THIS!
+SHEETDB_API_URL = "https://sheetdb.io/api/v1/xbi3y5ijz09uu"  # Your existing API link
 
 @app.route('/')
 def index():
@@ -22,8 +22,8 @@ def submit():
             data = {
                 "data": [
                     {
-                        "Name": name,
-                        "Email": email
+                        "name": name,    # Lowercase to match your Sheet
+                        "email": email   # Lowercase to match your Sheet
                     }
                 ]
             }
